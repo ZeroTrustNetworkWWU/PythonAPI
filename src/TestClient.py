@@ -11,7 +11,7 @@ def TestRequests(data):
         print("Testing without logging in...")
         print("Posting...")
         response = ZTRequests.post(f"{config.edgeNodeUrl}/testPost", json=data)
-        response2 = requests.post(f"{config.backendServerUrl}/testPost", json=data, verify="cert.pem")
+        response2 = requests.post(f"{config.backendServerUrl}/testPost", json=data)
 
         validateResponse(response, response2)
 
@@ -29,27 +29,27 @@ def TestRequests(data):
 
         print("Posting...")
         response = ZTRequests.post(f"{config.edgeNodeUrl}/testPost", json=data)
-        response2 = requests.post(f"{config.backendServerUrl}/testPost", json=data, verify="cert.pem")
+        response2 = requests.post(f"{config.backendServerUrl}/testPost", json=data)
         validateResponse(response, response2)
 
         print("Geting...")
         response = ZTRequests.get(f"{config.edgeNodeUrl}/testGet")
-        response2 = requests.get(f"{config.backendServerUrl}/testGet", verify="cert.pem")
+        response2 = requests.get(f"{config.backendServerUrl}/testGet")
         validateResponse(response, response2)
 
         print("Puting...")
         response = ZTRequests.put(f"{config.edgeNodeUrl}/testPut", json=data)
-        response2 = requests.put(f"{config.backendServerUrl}/testPut", json=data, verify="cert.pem")
+        response2 = requests.put(f"{config.backendServerUrl}/testPut", json=data)
         validateResponse(response, response2)
 
         print("Deleting...")
         response = ZTRequests.delete(f"{config.edgeNodeUrl}/testDelete")
-        response2 = requests.delete(f"{config.backendServerUrl}/testDelete", verify="cert.pem")
+        response2 = requests.delete(f"{config.backendServerUrl}/testDelete")
         validateResponse(response, response2)
 
         print("Heading...")
         response = ZTRequests.head(f"{config.edgeNodeUrl}/testHead")
-        response2 = requests.head(f"{config.backendServerUrl}/testHead", verify="cert.pem")
+        response2 = requests.head(f"{config.backendServerUrl}/testHead")
         validateResponse(response, response2)
 
         print("Logging out...")
@@ -76,12 +76,12 @@ def TestRequests(data):
 
         print("Posting...")
         response = ZTRequests.post(f"{config.edgeNodeUrl}/testPost", json=data)
-        response2 = requests.post(f"{config.backendServerUrl}/testPost", json=data, verify="cert.pem")
+        response2 = requests.post(f"{config.backendServerUrl}/testPost", json=data)
         validateResponse(response, response2)
 
         print("Geting...")
         response = ZTRequests.get(f"{config.edgeNodeUrl}/testGet")
-        response2 = requests.get(f"{config.backendServerUrl}/testGet", verify="cert.pem")
+        response2 = requests.get(f"{config.backendServerUrl}/testGet")
         validateResponse(response, response2)
 
         print("\nDone\n")
@@ -92,7 +92,7 @@ def TestRequests(data):
         end = time.time()
         print(f"Edge Node Transit time: {end - start}")
         start = time.time()
-        response = requests.get(f"{config.backendServerUrl}/testGet", verify="cert.pem")
+        response = requests.get(f"{config.backendServerUrl}/testGet")
         end = time.time()
         print(f"Backend server transit time: {end - start}")
 
