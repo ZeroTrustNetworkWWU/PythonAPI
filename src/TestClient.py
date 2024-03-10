@@ -52,10 +52,10 @@ def TestRequests(data):
         response2 = requests.head(f"{config.backendServerUrl}/testHead")
         validateResponse(response, response2)
 
+        input("Press enter to continue...")
+
         print("Logging out...")
         response = ZTRequests.logout(f"{config.edgeNodeUrl}/logout")
-
-        input("Press enter to continue...")
 
         print("Registering...")
         response = ZTRequests.register(f"{config.edgeNodeUrl}/register", user=input("Enter Username: "), password=input("Enter Password: "))
